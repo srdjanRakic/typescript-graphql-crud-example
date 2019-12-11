@@ -1,13 +1,15 @@
 # TypeScript GraphQL Crud Example
 
-### Usage
+## Usage
 
-Install all dependencies
+### Install all dependencies
 
 ```sh
 npm install
 ```
 
-Run the server
+### Run the server
+
 ```sh
 npm/yarn start
+```
