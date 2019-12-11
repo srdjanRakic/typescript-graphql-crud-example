@@ -54,4 +54,9 @@ export class MovieResolver {
   movies() {
     return Movie.find();
   }
+
+  @Query(() => [Movie])
+  movie(@Arg("title", () => String) title: string) {
+    return Movie.find({ where: { title } });
+  }
 }
