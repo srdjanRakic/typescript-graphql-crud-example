@@ -3,7 +3,6 @@ import { createConnection } from "typeorm";
 import express from "express";
 import { ApolloServer } from "apollo-server-express";
 import { buildSchema } from "type-graphql";
-import { HelloWorldResolver } from "./resolvers/HelloWorldResolver";
 import { MovieResolver } from "./resolvers/MovieResolver";
 
 const port = process.env.PORT ?? 4000;
@@ -15,7 +14,7 @@ const port = process.env.PORT ?? 4000;
 
   const apolloServer = new ApolloServer({
     schema: await buildSchema({
-      resolvers: [HelloWorldResolver, MovieResolver]
+      resolvers: [MovieResolver]
     }),
     context: ({ req, res }) => ({ req, res })
   });
