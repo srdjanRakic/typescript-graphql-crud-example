@@ -6,6 +6,8 @@ import { buildSchema } from "type-graphql";
 import { HelloWorldResolver } from "./resolvers/HelloWorldResolver";
 import { MovieResolver } from "./resolvers/MovieResolver";
 
+const port = process.env.PORT ?? 4000;
+
 (async () => {
   const app = express();
 
@@ -20,7 +22,7 @@ import { MovieResolver } from "./resolvers/MovieResolver";
 
   apolloServer.applyMiddleware({ app, cors: false });
 
-  app.listen(4000, () => {
-    console.log("express server started");
+  app.listen(port, () => {
+    console.log(`Express Server running at port ${port}`);
   });
 })();
